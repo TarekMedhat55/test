@@ -83,19 +83,61 @@ nav {
     width: 100%;
     .brand {
         float: left;
-        width: 50%;
+        width: 70%;
     }
     .links {
         float: right;
-        width: 50%;
+        width: 30%;
         margin-top: 15px;
+        .menu {
+            position: relative;
+            &:hover .submenu {
+                display: block
+            }
+            .submenu {
+                position: absolute;
+                top: 42px;
+                left: 0;
+                width: 180px;
+                background-color: #FFF;
+                padding: 10px;
+                box-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+                transition: all .5s ease-in-out;
+                display: none;
+                &:before {
+                    border-left: 6px solid transparent;
+                    border-right: 6px solid transparent;
+                    border-bottom: 6px solid #FFF;
+                    content: "";
+                    height: 0;
+                    left: 32px;
+                    position: absolute;
+                    top: -6px;
+                    width: 0;
+                }
+                li {
+                    padding: 10px;
+                    a {
+                        color: #777;
+                        text-decoration: none;
+                        &:hover {
+                            color: #F00;
+                        }
+                    }
+                }
+            }
+        }
         li {
             display: inline-block;
             padding: 10px 7px;
             font-weight: 700;
-            &:hover {
-                color: #eee;
-                cursor: pointer;
+            a {
+                text-decoration: none;
+                color: $white;
+                &:hover {
+                    color: #eee;
+                    cursor: pointer;
+                }
             }
         }
     }
